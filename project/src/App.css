@@ -9,12 +9,8 @@ main {
 
 .dice-container {
     display: grid;
-    grid-template-columns: repeat(5, 50px);
-    grid-template-rows: repeat(2, 50px);
-    justify-content: center;
-    gap: 10px;
-    max-width: fit-content;
-    margin: 0 auto;
+    grid-template: auto auto / repeat(5, 1fr);
+    gap: 20px;
 }
 
 .die-button {
