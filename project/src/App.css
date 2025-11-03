@@ -2,4 +2,29 @@ main {
     background-color: #F5F5F5;
     height: 100%;
     border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dice-container {
+    display: grid;
+    grid-template-columns: repeat(5, 50px);
+    grid-template-rows: repeat(2, 50px);
+    justify-content: center;
+    gap: 10px;
+    max-width: fit-content;
+    margin: 0 auto;
+}
+
+.die-button {
+    width: 50px;
+    height: 50px;
+    border-radius: 10px;
+    border: none;
+    background-color: #FFFFFF;
+}
+
+.die-button:hover {
+    background-color: #59E391;
 }
