@@ -22,8 +22,8 @@ export default function App(max) {
         <main>
             <div className="dice-container">
                 {diceElements}
-                <button className="roll-dice-button" onClick={rollDice}>Roll Dice</button>
             </div>
+            <button className="roll-dice" onClick={rollDice}>Roll Dice</button>
         </main>
     )
 }
