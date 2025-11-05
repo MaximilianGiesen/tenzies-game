@@ -7,13 +7,13 @@ export default function App(max) {
     const generateAllNewDice = () => {
         let min = 1;
         let max = 6;
-        let random = [];
+        let newDice = [];
 
         for (let i = min; i <= 10; i++) {
-            let n = Math.floor(Math.random() * (max - min + 1)) + min; random.push(n);
+            let random = Math.floor(Math.random() * (max - min + 1)) + min; newDice.push(random);
         }
 
-        return random;
+        return newDice;
 
     }
 
