@@ -14,10 +14,15 @@ export default function App(max) {
 
     const diceElements = dice.map(num => <Die value={num} />)
 
+    const rollDice = () => {
+        setDice(generateAllNewDice())
+    }
+
     return (
         <main>
             <div className="dice-container">
                 {diceElements}
+                <button className="roll-dice-button" onClick={rollDice}>Roll Dice</button>
             </div>
         </main>
     )
