@@ -12,12 +12,12 @@ export default function App(max) {
 
     const [dice, setDice] = useState(generateAllNewDice())
 
-    const getRandomDice = dice.map(dice => <Die value={dice} />)
+    const diceElements = dice.map(dice => <Die value={dice} />)
 
     return (
         <main>
             <div className="dice-container">
-                {getRandomDice}
+                {diceElements}
             </div>
         </main>
     )
