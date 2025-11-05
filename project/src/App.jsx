@@ -5,17 +5,17 @@ import './App.css';
 export default function App(max) {
 
     const generateAllNewDice = () => {
-        let min = 1;
-        let max = 6;
         let newDice = [];
 
-        for (let i = min; i <= 10; i++) {
-            let random = Math.floor(Math.random() * (max - min + 1)) + min; newDice.push(random);
+        for (let i = 0; i < 10; i++) {
+            let random = Math.floor(Math.random() * 6);
+            newDice.push(random);
         }
 
         return newDice;
-
     }
+
+    console.log(generateAllNewDice())
 
     return (
         <main>
