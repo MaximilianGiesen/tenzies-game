@@ -12,7 +12,7 @@ export default function App(max) {
 
     const [dice, setDice] = useState(generateAllNewDice())
 
-    const diceElements = dice.map(dice => <Die value={dice} />)
+    const diceElements = dice.map(num => <Die value={num} />)
 
     return (
         <main>
