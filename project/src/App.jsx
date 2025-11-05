@@ -1,4 +1,4 @@
-import React from 'react';
+import { useState } from 'react';
 import Die from "./components/Die.jsx";
 import './App.css';
 
@@ -10,41 +10,14 @@ export default function App(max) {
             .map(() => Math.ceil(Math.random() * 6))
     }
 
-    console.log(generateAllNewDice())
+    const [dice, setDice] = useState(generateAllNewDice())
+
+    const getRandomDice = dice.map(dice => <Die value={dice} />)
 
     return (
         <main>
             <div className="dice-container">
-                <Die
-                    value="1"
-                />
-                <Die
-                    value="2"
-                />
-                <Die
-                    value="3"
-                />
-                <Die
-                    value="4"
-                />
-                <Die
-                    value="5"
-                />
-                <Die
-                    value="6"
-                />
-                <Die
-                    value="1"
-                />
-                <Die
-                    value="2"
-                />
-                <Die
-                    value="3"
-                />
-                <Die
-                    value="4"
-                />
+                {getRandomDice}
             </div>
         </main>
     )
