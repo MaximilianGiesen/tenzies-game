@@ -17,7 +17,7 @@ export default function App(max) {
 
     const [dice, setDice] = useState(generateAllNewDice())
 
-    const diceElements = dice.map(dieObj => <Die key={dieObj.id} value={dieObj.value} />)
+    const diceElements = dice.map(dieObj => <Die key={dieObj.id} value={dieObj.value} isHeld={dieObj.isHeld}/>)
 
     const rollDice = () => {
         setDice(generateAllNewDice())

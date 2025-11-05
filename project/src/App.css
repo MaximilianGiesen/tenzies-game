@@ -58,3 +58,7 @@ button.roll-dice {
 .die-button:hover {
     background-color: #59E391;
 }
+
+button.activated {
+    background-color: #59E391;
+}
