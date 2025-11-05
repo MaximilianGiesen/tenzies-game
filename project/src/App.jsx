@@ -5,14 +5,9 @@ import './App.css';
 export default function App(max) {
 
     const generateAllNewDice = () => {
-        let newDice = [];
-
-        for (let i = 0; i < 10; i++) {
-            let random = Math.floor(Math.random() * 6);
-            newDice.push(random);
-        }
-
-        return newDice;
+        return new Array(10)
+            .fill(0)
+            .map(() => Math.ceil(Math.random() * 6))
     }
 
     console.log(generateAllNewDice())
