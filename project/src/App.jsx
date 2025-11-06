@@ -61,7 +61,7 @@ export default function App() {
             <div className="dice-container">
                 {diceElements}
             </div>
-            <button className="roll-dice" onClick={gameWon ? startNewGame : rollDice}>
+            <button className="roll-dice" onClick={rollDice}>
                 {gameWon ? "New Game" : "Roll Dice"}
             </button>
         </main>
