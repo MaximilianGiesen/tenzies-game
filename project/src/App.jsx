@@ -15,6 +15,11 @@ export default function App() {
             }))
     }
 
+    const [dice, setDice] = useState(generateAllNewDice())
+
+    const gameWon = dice.every(die => die.isHeld) &&
+        dice.every((x) => x.value === dice[0].value)
+
     const hold = (id) => {
         setDice(oldDice => oldDice.map(die =>
             die.id === id ? {
@@ -23,8 +28,6 @@ export default function App() {
             } : die
         ))
     }
-
-    const [dice, setDice] = useState(generateAllNewDice())
 
     const diceElements = dice.map(dieObj =>
         <Die
@@ -52,7 +55,9 @@ export default function App() {
             <div className="dice-container">
                 {diceElements}
             </div>
-            <button className="roll-dice" onClick={rollDice}>Roll Dice</button>
+            <button className="roll-dice" onClick={rollDice}>
+                {gameWon ? "New Game" : "Roll Dice"}
+            </button>
         </main>
     )
 }
