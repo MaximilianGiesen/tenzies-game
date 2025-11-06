@@ -3,7 +3,7 @@ import Die from "./components/Die.jsx";
 import './App.css';
 import { nanoid } from "nanoid"
 
-export default function App(max) {
+export default function App() {
 
     const generateAllNewDice = () => {
         return new Array(10)
@@ -16,7 +16,14 @@ export default function App(max) {
     }
 
     const hold = (id) => {
-        console.log(id)
+        setDice(prevDie => prevDie.map(
+            die => {
+                return die.id === id ? {
+                    ...die,
+                    isHeld: !die.isHeld
+                } : die
+            }
+        ))
     }
 
     const [dice, setDice] = useState(generateAllNewDice())
