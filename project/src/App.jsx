@@ -15,9 +15,21 @@ export default function App(max) {
             }))
     }
 
+    const hold = (id) => {
+        console.log(id)
+    }
+
     const [dice, setDice] = useState(generateAllNewDice())
 
-    const diceElements = dice.map(dieObj => <Die key={dieObj.id} value={dieObj.value} isHeld={dieObj.isHeld}/>)
+    const diceElements = dice.map(dieObj =>
+        <Die
+            key={dieObj.id}
+            value={dieObj.value}
+            isHeld={dieObj.isHeld}
+            hold={hold}
+            id={dieObj.id}
+        />
+    )
 
     const rollDice = () => {
         setDice(generateAllNewDice())
