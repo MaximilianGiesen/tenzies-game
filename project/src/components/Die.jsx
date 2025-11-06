@@ -5,7 +5,7 @@ export default function Die(props) {
     return(
         <button
             className={props.isHeld ? "activated" : null}
-            onClick={() => props.hold(props.id)}
+            onClick={props.hold}
         >
             {props.value}
         </button>
