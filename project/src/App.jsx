@@ -16,14 +16,14 @@ export default function App() {
     }
 
     const hold = (id) => {
-        setDice(prevDie => prevDie.map(
-            die => {
+        setDice(oldDice => {
+            return oldDice.map(die => {
                 return die.id === id ? {
                     ...die,
                     isHeld: !die.isHeld
                 } : die
-            }
-        ))
+            })
+        })
     }
 
     const [dice, setDice] = useState(generateAllNewDice())
