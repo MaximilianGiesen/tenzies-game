@@ -19,15 +19,15 @@ export default function App() {
     const [dice, setDice] = useState(() => generateAllNewDice())
     const btnRef = useRef(null);
 
+
+    const gameWon = dice.every(die => die.isHeld) &&
+        dice.every((x) => x.value === dice[0].value)
+
     useEffect(() => {
         if(gameWon) {
             btnRef.current.focus();
         }
     }, [gameWon])
-
-
-    const gameWon = dice.every(die => die.isHeld) &&
-        dice.every((x) => x.value === dice[0].value)
 
     const hold = (id) => {
         setDice(oldDice => oldDice.map(die =>
